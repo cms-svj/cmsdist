@@ -1,8 +1,8 @@
 ### RPM external pythia8 306
 
-%define tag 2859dafb545a8ede707a86b4eff4a329c21cfd6a
-%define branch cms/%{realversion}
-%define github_user cms-externals
+%define tag 763edd71e34f1b49fe577942df16af027e1a5b04
+%define branch emj/%{realversion}
+%define github_user cms-svj
 Source: git+https://github.com/%github_user/%{n}.git?obj=%{branch}/%{tag}&export=%{n}%{realversion}&output=/%{n}-%{realversion}.tgz
 
 Requires: hepmc hepmc3 lhapdf
