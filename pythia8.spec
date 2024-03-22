@@ -4,11 +4,13 @@
 %define branch cms/%{realversion}
 %define github_user cms-externals
 Source: git+https://github.com/%github_user/%{n}.git?obj=%{branch}/%{tag}&export=%{n}%{realversion}&output=/%{n}-%{realversion}.tgz
+Patch0: slhainterface
 
 Requires: hepmc lhapdf
 
 %prep
 %setup -q -n %{n}%{realversion}
+%patch0 -p1
 
 ./configure --prefix=%i --enable-shared --with-hepmc2=${HEPMC_ROOT} --with-lhapdf6=${LHAPDF_ROOT}
 
